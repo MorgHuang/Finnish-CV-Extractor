@@ -32,3 +32,7 @@ Install required packages via pip:
 pip install pdfplumber pandas
 pip install -r requirements.txt
 python extractor_v5.py
+
+####Output
+output_structured_cv_v81.xlsx（主要結構化欄位結果）
+output_skipped_v81.xlsx（被過濾的 entry 與過濾原因）
