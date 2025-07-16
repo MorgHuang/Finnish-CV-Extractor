@@ -1,20 +1,23 @@
-### Finnish-CV-Extractor
-Extract structured CVs data from PDF file (of a OCR-scanned professionals directory book) into Excel (Names, Employers, Work History etc.). OUTPUT FORMAT: Excel (.xlsx). One row per person, one column per each data field.
+### Finnish-CV-Extractor (prototype v5)
+A Python-based prototype that extracts structured CV data from OCR-processed Finnish-language PDFs (e.g., directory-style scanned books). Outputs clean, tabular Excel files.
 
 Finnish-CV-Extractor/                  
 │                                    
 ├── sample_input/                  
-│   └── sample_cv_10pages.pdf     ← placeholder                  
+│   └── sample_cv.pdf     ← placeholder                  
 │                                    
 ├── extractor.py                  
 ├── requirements.txt              
 ├── README.md                     
 └── .gitignore
 
-### Finnish CV Extractor (Prototype)
+#### Features
 
-This is a Python prototype for extracting structured CV data from an OCR-scanned Finnish PDF directory.  
-The script extracts key fields (name, city, university, work history, etc.) and exports results to Excel.
+- OCR cleanup and broken-text normalization
+- Flexible entry detection using `Lastname, Firstname, City.` format
+- Filters out false positives (language codes, invalid names, OCR noise)
+- Finnish city name validation
+- Strict `dd.mm.yy` date of birth extraction
 
 #### Sample Input
 
@@ -26,4 +29,6 @@ To run this prototype, place a sample 10–20 page PDF in the `sample_input/` fo
 Install required packages via pip:
 
 ```bash
+pip install pdfplumber pandas
 pip install -r requirements.txt
+python extractor_v5.py
